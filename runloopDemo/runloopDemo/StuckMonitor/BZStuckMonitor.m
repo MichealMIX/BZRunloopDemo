@@ -51,7 +51,7 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         //子线程开启一个持续的loop用来进行监控
         while (YES) {
-            long semaphoreWait = dispatch_semaphore_wait(self->dispatchSemaphore, dispatch_time(DISPATCH_TIME_NOW, 10*NSEC_PER_MSEC));
+            long semaphoreWait = dispatch_semaphore_wait(self->dispatchSemaphore, dispatch_time(DISPATCH_TIME_NOW, 5*NSEC_PER_MSEC));
             //  semaphoreWait 的值不为 0， 说明线程被堵塞
             if (semaphoreWait != 0) {
                 if (!self->runLoopObserver) {
