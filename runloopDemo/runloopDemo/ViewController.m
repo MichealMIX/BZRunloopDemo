@@ -11,6 +11,7 @@
 #import "ThreadKeepAliveVC.h"
 #import "TimerErrorVC.h"
 #import "StuckTestVC.h"
+#import "MemoryTestVC.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tv;
@@ -73,6 +74,9 @@
     }else if (indexPath.row == 3){
         StuckTestVC *vc = [[StuckTestVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 4){
+        MemoryTestVC *vc = [[MemoryTestVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -80,7 +84,7 @@
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"Thread will delloc",@"Thread always alive",@"Timer error when scroll",@"view stuck"];
+        _dataArray = @[@"Thread will delloc",@"Thread always alive",@"Timer error when scroll",@"View stuck",@"Memory monitor"];
     }
     return _dataArray;
 }
