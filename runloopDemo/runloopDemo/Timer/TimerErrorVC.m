@@ -50,7 +50,7 @@
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countAdd) userInfo:nil repeats:YES];
     _timer = timer;
     //如果这句代码注释掉滑动时计时器将不正常
-//    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)invalidateTimer{

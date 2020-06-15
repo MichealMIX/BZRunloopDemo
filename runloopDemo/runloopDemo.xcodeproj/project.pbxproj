@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9A47C31D2493530B00AF2063 /* MemoryTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A47C31C2493530B00AF2063 /* MemoryTestVC.m */; };
 		9A47C3202493562000AF2063 /* BZMemoryMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A47C31F2493562000AF2063 /* BZMemoryMonitor.m */; };
+		9A47C3242493662E00AF2063 /* FPSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A47C3232493662E00AF2063 /* FPSMonitor.m */; };
+		9A47C328249744A700AF2063 /* CPUUsageMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A47C327249744A700AF2063 /* CPUUsageMonitor.m */; };
 		9AA4353D248F7FA500F6A052 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA4353C248F7FA500F6A052 /* AppDelegate.m */; };
 		9AA43543248F7FA500F6A052 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA43542248F7FA500F6A052 /* ViewController.m */; };
 		9AA43546248F7FA500F6A052 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA43544248F7FA500F6A052 /* Main.storyboard */; };
@@ -49,6 +51,10 @@
 		9A47C31C2493530B00AF2063 /* MemoryTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryTestVC.m; sourceTree = "<group>"; };
 		9A47C31E2493562000AF2063 /* BZMemoryMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BZMemoryMonitor.h; sourceTree = "<group>"; };
 		9A47C31F2493562000AF2063 /* BZMemoryMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BZMemoryMonitor.m; sourceTree = "<group>"; };
+		9A47C3222493662E00AF2063 /* FPSMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPSMonitor.h; sourceTree = "<group>"; };
+		9A47C3232493662E00AF2063 /* FPSMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPSMonitor.m; sourceTree = "<group>"; };
+		9A47C326249744A700AF2063 /* CPUUsageMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPUUsageMonitor.h; sourceTree = "<group>"; };
+		9A47C327249744A700AF2063 /* CPUUsageMonitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPUUsageMonitor.m; sourceTree = "<group>"; };
 		9AA43538248F7FA500F6A052 /* runloopDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runloopDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA4353B248F7FA500F6A052 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AA4353C248F7FA500F6A052 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +136,24 @@
 			path = MemoryMonitor;
 			sourceTree = "<group>";
 		};
+		9A47C3212493623A00AF2063 /* FPSMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				9A47C3222493662E00AF2063 /* FPSMonitor.h */,
+				9A47C3232493662E00AF2063 /* FPSMonitor.m */,
+			);
+			path = FPSMonitor;
+			sourceTree = "<group>";
+		};
+		9A47C3252497447100AF2063 /* CPUUsage */ = {
+			isa = PBXGroup;
+			children = (
+				9A47C326249744A700AF2063 /* CPUUsageMonitor.h */,
+				9A47C327249744A700AF2063 /* CPUUsageMonitor.m */,
+			);
+			path = CPUUsage;
+			sourceTree = "<group>";
+		};
 		9AA4352F248F7FA500F6A052 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +179,8 @@
 		9AA4353A248F7FA500F6A052 /* runloopDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9A47C3252497447100AF2063 /* CPUUsage */,
+				9A47C3212493623A00AF2063 /* FPSMonitor */,
 				9A47C31A2493521C00AF2063 /* MemoryMonitor */,
 				9AA435822490CAA800F6A052 /* StuckMonitor */,
 				9AA4357E2490BA1700F6A052 /* Timer */,
@@ -412,6 +438,7 @@
 				9AA4357D249084F700F6A052 /* ThreadKeepAliveVC.m in Sources */,
 				9A47C3202493562000AF2063 /* BZMemoryMonitor.m in Sources */,
 				9AA43576248F8BBC00F6A052 /* ThreadTestVC.m in Sources */,
+				9A47C328249744A700AF2063 /* CPUUsageMonitor.m in Sources */,
 				9AA43543248F7FA500F6A052 /* ViewController.m in Sources */,
 				9A47C31D2493530B00AF2063 /* MemoryTestVC.m in Sources */,
 				9AA4353D248F7FA500F6A052 /* AppDelegate.m in Sources */,
@@ -419,6 +446,7 @@
 				9AA435882490F47A00F6A052 /* StuckTestVC.m in Sources */,
 				9AA435852490CE8800F6A052 /* BZStuckMonitor.m in Sources */,
 				9AA435812490BA7F00F6A052 /* TimerErrorVC.m in Sources */,
+				9A47C3242493662E00AF2063 /* FPSMonitor.m in Sources */,
 				9AA4354E248F7FA700F6A052 /* main.m in Sources */,
 				9AA43572248F7FCD00F6A052 /* BZThread.m in Sources */,
 			);

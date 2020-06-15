@@ -8,10 +8,13 @@
 
 #import "StuckTestVC.h"
 #import "BZStuckMonitor.h"
+#import "FPSMonitor.h"
+#import "CPUUsageMonitor.h"
 @interface StuckTestVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property(nonatomic,strong)UICollectionView *cv;
 
+@property(nonatomic,strong)dispatch_source_t timer;
 
 @end
 
@@ -23,8 +26,34 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     [[BZStuckMonitor shareInstance] startMonitor];
+//    [[FPSMonitor shareInstance] setFpsCB:^(float fps) {
+////        NSLog(@"%f",fps);
+//    }];
     [self initUI];
+    [self getCpuUsage];
     // Do any additional setup after loading the view.
+}
+
+- (void)getCpuUsage{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //创建一个定时器（dispatch_source_t本质上还是一个OC对象）
+    self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    
+    //设置定时器的各种属性
+    dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0*NSEC_PER_SEC));
+    uint64_t interval = (uint64_t)(2.0*NSEC_PER_SEC);
+    dispatch_source_set_timer(self.timer, start, interval, 0);
+    
+    
+    //设置回调
+    __weak typeof(self) weakSelf = self;
+    dispatch_source_set_event_handler(self.timer, ^{
+        //定时器需要执行的操作
+        NSLog(@"%d",[[CPUUsageMonitor shareInstance] cpuUsage]);
+       
+    });
+    //启动定时器（默认是暂停）
+    dispatch_resume(self.timer);
 }
 
 - (void)initUI{
