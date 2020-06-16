@@ -26,11 +26,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     [[BZStuckMonitor shareInstance] startMonitor];
-//    [[FPSMonitor shareInstance] setFpsCB:^(float fps) {
-////        NSLog(@"%f",fps);
-//    }];
+    [[FPSMonitor shareInstance] setFpsCB:^(float fps) {
+//        NSLog(@"%f",fps);
+    }];
     [self initUI];
-    [self getCpuUsage];
+//    [self getCpuUsage];
     // Do any additional setup after loading the view.
 }
 

@@ -19,6 +19,11 @@
     return instance;
 }
 
+
+//struct mach_task_basic_info info;
+//mach_msg_type_number_t size = sizeof(info);
+//kern_return_t kl = task_info(mach_task_self(), MACH_TASK_BASIC_INFO, (task_info_t)&info, &size);
+
 - (float)getMemoryUse{
     //TASK_VM_INFO中存储物理内存使用信息
     int64_t memoryUsageInByte = 0;

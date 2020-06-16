@@ -40,7 +40,7 @@
     // 初始化CADisplayLink
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(fpsCount:)];
     // 把CADisplayLink对象加入runloop
-    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 
